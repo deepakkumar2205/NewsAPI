@@ -2,7 +2,7 @@ import { Container } from '@mui/material';
 import { Route, Routes, useLocation } from "react-router-dom";
 import Headline from './components/Headline.jsx';
 import Navbar from './components/Navbar';
-import Tech from './components/Sharemarket.jsx';
+import Tech from './components/tech.jsx';
 import Sports from './components/Sports.jsx';
 import Login from './components/Login.jsx';
 import Signup from './components/Signup.jsx';

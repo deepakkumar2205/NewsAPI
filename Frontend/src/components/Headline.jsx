@@ -10,13 +10,12 @@ const Headline = () => {
     const navigate = useNavigate(); 
 
     useEffect(()=>{
-      let API1='https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=9839d7d99bd44aa588eaa30a7efb9831'
-      axios(API1)
+      axios(`${API}/news/getHeadline`)
       .then((data)=>{
-        setData(data.data.articles)
+        setData(data.data)
       })
       .catch((err)=>console.log(err))
-
+        
       axios({
         url:`${API}/users/verifytoken`,
         method:"get",

@@ -36,7 +36,6 @@ const Login = () => {
           data: values,
         })
           .then((data) => {
-            console.log(data.data.token);
             localStorage.setItem("x-Auth-token",data.data.token)
             navigate("/")
             if (data.status === 200) {
@@ -53,8 +52,7 @@ const Login = () => {
             }
           })
           .catch((err) => {
-            console.log(err.response.status);
-            if (err.response.status === 405) {
+            if (err.response.status === 401) {
               toast.error("Invalid Credentials", {
                 position: "top-right",
                 autoClose: 5000,

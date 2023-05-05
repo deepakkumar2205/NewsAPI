@@ -2,18 +2,19 @@ import React, { useEffect, useState } from 'react'
 import CardComp from './Card'
 import axios from 'axios'
 import Loading from './Loading'
+import API from '../../Url'
 
 const Sports = () => {
     const [data, setData] = useState([])
 
     useEffect(()=>{
-      let API1='https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=9839d7d99bd44aa588eaa30a7efb9831'
-      axios(API1)
+      axios(`${API}/news/getSports`)
       .then((data)=>{
-        setData(data.data.articles)
+        setData(data.data)
       })
       .catch((err)=>console.log(err))
-  
+        
+    
     },[])
 
   return (
